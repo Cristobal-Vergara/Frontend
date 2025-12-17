@@ -22,12 +22,6 @@ const Dashboard = () => {
           Productos
         </button>
 
-        {/* Admin y Vendedor pueden ver Categorías */}
-        {(rol === 'admin' || rol === 'vendedor') && (
-          <button className="btn btn-secondary" onClick={() => navigate('/categorias')}>
-            Categorías
-          </button>
-        )}
 
         {/* Admin y Vendedor pueden ver Boletas */}
         {(rol === 'admin' || rol === 'vendedor') && (

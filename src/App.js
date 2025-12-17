@@ -10,6 +10,10 @@ import ListaBoletas from './components/ListaBoletas';
 
 import ListaCategorias from './components/ListaCategorias';
 
+import SobreNosotros from './components/SobreNosotros';
+import Footer from './info/Footer';
+import Noticias from './components/Noticias';
+
 
 import ListaProductos from './components/ListaProductos';
 import ConfirmarCompra from './components/ConfirmarCompra';
@@ -22,6 +26,7 @@ import ListaCompras from './components/ListaCompras';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
+import Home from './components/Home';
 
 
 import ProductoComponent from './components/ProductoComponent';
@@ -33,6 +38,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+      
         <Navbar />
         <CarritoProvider>
 
@@ -64,6 +70,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+          <Route path="/noticias" element={<Noticias />} />
+
+          {/* HOME PÚBLICO */}
+          <Route path="/" element={<Home />} />
+
+          {/* SOBRE NOSOTROS */}
+          <Route path="/sobre-nosotros" element={<SobreNosotros />} />
 
 
           {/* PRODUCTOS */}
@@ -182,6 +196,12 @@ function App() {
 
         </Routes>
         </CarritoProvider>
+
+
+        
+         
+        <Footer />
+       
       </BrowserRouter>
     </AuthProvider>
   );

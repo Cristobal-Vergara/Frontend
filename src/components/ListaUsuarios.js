@@ -48,7 +48,7 @@ const ListaUsuarios = () => {
                         <tr key={u.id}>
                             <td>{u.id}</td>
                             <td>{u.nombre}</td>
-                            <td>{u.correo}</td>
+                            <td>{u.email}</td>
                             <td>{u.rol}</td>
 
                             <td>

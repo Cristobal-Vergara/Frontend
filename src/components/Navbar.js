@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../services/AuthContext';
+import logoDiamond from '../assets/logo-diamond.png';
 
 const Navbar = () => {
   const { usuario, logout } = useContext(AuthContext);
@@ -14,11 +15,38 @@ const Navbar = () => {
   const rol = usuario?.rol?.toLowerCase(); // convertimos a minúscula para consistencia
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-      <Link className="navbar-brand" to="/">Crazy Diamond</Link>
+    <nav className="navbar navbar-expand-lg navbar-dark px-3" style={{ backgroundColor: '#40188bff' }}>
+
+      <Link className="navbar-brand d-flex align-items-center" to="/">
+          <img
+            src={logoDiamond}
+            alt="Crazy Diamond Logo"
+            style={{
+              width: '32px',
+              height: '32px',
+              marginRight: '8px'
+            }}
+          />
+          Crazy Diamond
+        </Link>
 
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav me-auto">
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/sobre-nosotros">
+              Sobre Nosotros
+            </Link>
+          </li>
+
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/noticias">
+              Noticias
+            </Link>
+          </li>
+
+
 
           {/* Mostrar solo si hay usuario logeado */}
           {usuario && (
